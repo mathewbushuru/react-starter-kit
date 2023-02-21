@@ -1,6 +1,9 @@
 # My React Starter Kit
 
-...
+I have spun up a new React app so many times and it always involves the same time-consuming process - remove boilerplate, add my preferred directory structure, etc.
+
+This repo is just my starting point for future projects following my examples I have found on the web and my preferences on how to build react apps. I plan to use this to also use this to keep my custom hooks, components, util functions, etc.
+
 
 ## Table Of Contents:
 
