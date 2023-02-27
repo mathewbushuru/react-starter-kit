@@ -1,0 +1,70 @@
+.searchForm {
+  padding: 12px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.searchForm input {
+  -webkit-appearance: none;
+  background: transparent;
+  color: var(--googleBlack);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 2px 5px 0 rgba(60, 64, 67, 0.16);
+}
+.searchForm input:hover{
+  box-shadow: 0 2px 5px 0 rgba(60, 64, 67, 0.32);
+}
+.mobileSearchInput {
+  padding-left: 60px;
+  padding-right: 20px;
+}
+.desktopSearchInput {
+  padding-left: 20px;
+  padding-right: 120px;
+}
+.microphoneIconMobile,
+.cameraIconMobile,
+.dividerIconMobile {
+  display: none;
+}
+.searchIconMobile {
+  color: var(--googleGrey);
+  font-size: 22px;
+  position: absolute;
+  top: 35%;
+  left: 30px;
+}
+.searchIconDesktop,
+.microphoneIconDesktop,
+.cameraIconDesktop,
+.dividerIconDesktop {
+  cursor: pointer;
+  font-size: 22px;
+  position: absolute;
+  top: 35%;
+}
+.searchIconDesktop {
+  color: var(--googleBlue);
+  right: 30px;
+}
+.cameraIconDesktop {
+  color: var(--googleYellow);
+  top: 34%;
+  right: 60px;
+}
+.microphoneIconDesktop {
+  color: var(--googleRed);
+  right: 90px;
+}
+.dividerIconDesktop {
+  font-size: 36px;
+  stroke-width: "0.1%";
+  /* color: var(--googleGrey); */
+  color: rgba(0,0,0,0.15);
+  top: 25%;
+  right: 105px;
+}

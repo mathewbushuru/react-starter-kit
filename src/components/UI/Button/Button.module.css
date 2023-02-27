@@ -1,0 +1,18 @@
+.primaryButton {
+    cursor: pointer;
+    background: var(--googleBlue2);
+    color: var(--googleWhite);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 9px 15px;
+    letter-spacing: 0.25px;
+    min-width: 80px;
+    white-space: nowrap;
+  }
+  .primaryButton:hover {
+    background: var(--googleBlue);
+  }
+  .primaryButton a{
+    text-decoration: none;
+    color: inherit;
+  }

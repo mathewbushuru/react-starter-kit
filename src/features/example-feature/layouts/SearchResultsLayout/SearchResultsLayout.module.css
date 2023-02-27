@@ -1,7 +1,12 @@
-.mainLayout{
+.searchResultsLayout{
     height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
+}
+.header{
+    flex-shrink: 0;
 }
 .content{
     flex-grow: 1;
