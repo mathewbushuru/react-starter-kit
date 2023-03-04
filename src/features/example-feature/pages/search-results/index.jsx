@@ -4,9 +4,10 @@ import { BiWorld as LinkIcon } from "react-icons/bi";
 
 import { useSearch } from "features/example-feature/hooks";
 import { SearchResultsLayout } from "features/example-feature/layouts";
-import { SEARCH_ON } from "config";
 
 import styles from "./SearchResultsPage.module.css";
+
+const SEARCH_ON = true;
 
 export const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
