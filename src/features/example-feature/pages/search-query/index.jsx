@@ -9,7 +9,6 @@ import { BsCamera as Camera } from "react-icons/bs";
 
 import { MainLayout } from "layouts";
 import { PrimaryButton } from "components/UI";
-import { MobileTrendingSearches } from "features/example-feature/components";
 
 import { useWindowDimensions } from "hooks/ui_hooks";
 
@@ -70,9 +69,6 @@ export const SearchQueryPage = () => {
             Google offered in: <span> Français</span>
           </div>
 
-          <div className={styles.trendingSearches}>
-            {width < 501 && <MobileTrendingSearches />}
-          </div>
         </div>
       </div>
     </MainLayout>
