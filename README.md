@@ -1,4 +1,4 @@
-# My React Starter Kit
+<h1 align="center">My React Starter Kit</h1>
 
 This  is my starting point for my React projects.
 
