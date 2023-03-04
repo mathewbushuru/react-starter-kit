@@ -1,21 +1,15 @@
 import { ComingSoon } from "components/UtilComponents";
+import { ErrorPage } from "globalPages";
 
 const protectedRoutes = [
   {
     path: "/app",
-    element: <ComingSoon />,
-    errorElement: <ComingSoon />,
-    children: [
-      {
-        errorElement: <ComingSoon />,
-        children: [
-          {
-            path: "/profile",
-            element: <ComingSoon />,
-          },
-        ],
-      },
-    ],
+    element: <ComingSoon item="Dashboard" />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "profile",
+    element: <ComingSoon item="profile" />,
   },
 ];
 

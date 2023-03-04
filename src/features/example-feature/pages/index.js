@@ -1,2 +1,2 @@
-export * from "features/example-feature/pages/search-query";
-export * from "features/example-feature/pages/search-results";
+export * from "features/example-feature/pages/home";
+export * from "features/example-feature/pages/about";

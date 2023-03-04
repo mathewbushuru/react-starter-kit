@@ -16,7 +16,7 @@ export const ComingSoon = ({ item }) => {
       >
         <p>{item} coming soon</p>
         <PrimaryButton onClick={() => navigate("/")}>
-          Back to search query
+          Back to home
         </PrimaryButton>
       </div>
     </MainLayout>

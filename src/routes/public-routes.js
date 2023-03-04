@@ -1,36 +1,17 @@
-import { SearchQueryPage } from "features/example-feature/pages";
+import { HomePage } from "features/example-feature/pages";
+import { ErrorPage } from "globalPages";
 import { ComingSoon } from "components/UtilComponents";
 
 const publicRoutes = [
   {
     path: "/",
-    element: <SearchQueryPage />,
-    errorElement: <SearchQueryPage />,
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: "/about",
-    element: <ComingSoon item="About page" />,
-  },
-  {
-    path: "/auth",
-    element: <ComingSoon item="Authentication" />,
-  },
-  {
-    path: "/doodles",
-    element: <ComingSoon item="Doodles" />,
-  },
-  {
-    path: "/gmail",
-    element: <ComingSoon item="Gmail" />,
-  },
-  {
-    path: "/images",
-    element: <ComingSoon item="Google Images" />,
-  },
-  {
-    path: "/store",
-    element: <ComingSoon item="Store page" />,
-  },
+    path: "/new-feature",
+    element: <ComingSoon item="New feature" />,
+  }
 ];
 
 export default publicRoutes;

@@ -1,11 +1,12 @@
-import { SearchResultsPage,SearchQueryPage } from "../pages";
+import { AboutPage } from "../pages";
+import { ErrorPage } from "globalPages";
 
-const searchRoutes = [
+const featureRoutes = [
   {
-    path: "/search",
-    element: <SearchResultsPage />,
-    errorElement: <SearchQueryPage />,
+    path: "/about",
+    element: <AboutPage />,
+    errorElement: <ErrorPage />,
   },
 ];
 
-export default searchRoutes;
+export default featureRoutes;
