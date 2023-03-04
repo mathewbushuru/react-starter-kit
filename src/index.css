@@ -1,21 +1,7 @@
 :root {
-  --googleGrey: #70757a;
-  --googleGrey2: #dadce0;
-  --googleGrey3: #4d5156;
-  --googleGrey4: #5f6368;
-  --googleBlue: #4285f4;
-  --googleBlue2: #1a73e8;
-  --googleBlueLink: #0060f0;
-  --googleBlueLink2: #1558d6;
-  --googleBlueLink3: #1a0dab;
-  --googleBlack: #202124;
-  --googleBlack2: #3c4043;
-  --googleWhite: #fff;
-  --googleWhite2: #f2f2f2;
-  --googleWhite3: #f8f9fa;
-  --googleGreen: #0f9d58;
-  --googleYellow: #f4b400;
-  --googleRed: #db4437;
+  --white: #fff;
+  --black: #000;
+  --grey: #666;
 }
 * {
   box-sizing: border-box;
@@ -29,6 +15,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.code{
+.code {
   font-family: monospace;
 }
