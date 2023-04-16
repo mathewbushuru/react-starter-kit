@@ -45,12 +45,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Builds the app for production to the `build` folder.
 
-#### Using UI Libraries
-I have included setup options for [Mantine](https://mantine.dev/) and [Chakra](https://chakra-ui.com/). 
+#### Using UI Libraries 
 
-If you want to use your own styling, delete `./providers/mantine` and `./providers/chakra` directories.
-
-To use either of the libraries, replace `./providers/index.jsx` with `./providers/<UI lib>/index.jsx` and delete the other providers.
+To set up a UI library add the library's context provider to `./providers/index.jsx`
 
 #### Data model
 
