@@ -4,7 +4,19 @@ This project ...
 
 The application structure is documented at `./docs/README.md`
 
-##### Project structure
+### Technologies Used
+
+- [`React`](https://react.dev/) : Frontend
+- [`TypeScript`](https://www.typescriptlang.org/) : Language
+- [`TailwindCSS`](https://tailwindcss.com/) : Styling
+
+##### Others
+- [`Vite`](https://vitejs.dev/) : Tooling
+- [`React-router`](https://reactrouter.com/en/main) : Routing
+- [`Lucide Icon Library`](https://lucide.dev/docs/lucide-react) : Tree-shakeable icons
+...
+
+### Project structure
 
 - [💻 Application Overview](./docs/README.md)
 - [⚙️ Project Configuration](./docs/README.md)
@@ -46,13 +58,13 @@ src
 +-- utils             # shared utility functions
 ```
 
-##### Features / Roadmap
+### Features / Roadmap
 
 - [x] Complete feature 1
 - [x] Complete feature 2
 - [ ] Uncomplete feature 
 
-##### Progress Images / Design
+### Progress Images / Design
 - 
 <!-- ![mobile](docs/progress/mobile_home.jpg)  -->
 <!-- ![desktop](docs/progress/desktop_home1.jpg)  -->

@@ -1,0 +1,2 @@
+- Delete this file and move `./README.md` to `./docs/README.md`
+- Rename `./READMEtemplate.md` as `./README.md`

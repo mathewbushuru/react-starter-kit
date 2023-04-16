@@ -76,7 +76,7 @@ The application has been bootstrapped  using `Vite`
 
 I have configured absolute imports to make it easier to move files around and avoid messy import paths such as `../../../../Component`. After moving a file, all imports will remain intact. Here is how I have configured it in this project:
 
-In the `vite.config.js` file, added:
+In the `vite.config.ts` file, added:
 ```sh
 resolve: {
     alias: {
@@ -85,7 +85,7 @@ resolve: {
   },
 ```
 
-and in the `jsconfig.json` file:
+and in the `tsconfig.json` file:
 
 ```json
 {
