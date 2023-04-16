@@ -1,12 +1,15 @@
+import { ComingSoon } from "@/components/Utils"
+import { ExampleHomePage } from "@/features/example-feature"
+
 const publicRoutes =  [
     {
         path: "/",
-        element: <h1>Home  page</h1>,
+        element: <ExampleHomePage/>,
         errorElement: <pre>Error Occured</pre>,
       },
       {
         path: "/new-feature",
-        element: <h1>Feature</h1>,
+        element: <ComingSoon item="New feature" />,
       }
 ]
 
