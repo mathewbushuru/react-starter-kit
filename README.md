@@ -104,7 +104,7 @@ We can then import a component without the relative slashes by starting from `sr
 
 #### Routing
 
-The app uses the `React-router v6.8.1`.
+The app uses the `React-router v6.10.0`.
 
 The root router (`appRouter`) for the app is found at `src/routes`. It uses the `createBrowserRouter` function to combine app-wide routes defined at `src/routes/app-routes.js` with all the feature specific routes such as the example-feature routes defined at `src/features/example-feature/routes`. The `appRouter` is used to create the `AppProvider` component that then wraps the whole app.
 
