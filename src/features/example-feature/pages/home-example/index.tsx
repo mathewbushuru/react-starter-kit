@@ -17,7 +17,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   const value = useSelector((state: any) => state.counter.value);
 
   return (
-    <div>
+    <div className="bg-slate-100">
       Example home page
       <div>{value}</div>
       <Button onClick={() => dispatch(incrementAction())}>Increment</Button>
