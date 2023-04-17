@@ -2,55 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --white: #fff;
-  --black: #000;
-  --grey: #666;
-
-  --primary: blue;
-  --secondary: green;
-
-  --max-width: 1300px;
-  --border-radius: 8px;
-  --fontfamily-default: Poppins;
-  --font-family-secondary: Montserrat;
-
-  --bg-color: #fff;
+/* 
+background color: component's background
+foreground color: component's text color
+ */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 215 20.2% 65.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+ 
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+ 
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 216 34% 17%;
+ 
+    --radius: 0.5rem;
+  }
 }
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  font-family: var(--fontfamily-default), "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  color: var(--black);
-  background: var(--bg-color);
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.code {
-  font-family: monospace;
-}
-
-/* sm */
-@media (min-width: 640px) {
-}
-
-/* md */
-@media (min-width: 768px) {
-}
-
-/* lg */
-@media (min-width: 1024px) {
-}
-
-/* xl  */
-@media (min-width: 1280px) {
-}
-
-/* 2xl  */
-@media (min-width: 1536px) {
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
