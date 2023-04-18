@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",      // Relace with name of repository
+  // base: "/<REPO_NAME>/",      // Relace with name of repository
   plugins: [react()],
   resolve: {
     alias: {
