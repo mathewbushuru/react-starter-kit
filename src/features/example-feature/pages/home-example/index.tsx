@@ -40,14 +40,20 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   return (
     <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
       <div className="max-w-5xl sm:mx-auto">
-        <div className="mb-4 border p-2">
-          Example home page
+        <div className="mb-4 border p-2 space-y-2">
+          <div>Example home page - Redux demo</div>
           <div>{value}</div>
-          <Button onClick={() => dispatch(incrementAction())}>Increment</Button>
-          <Button onClick={() => dispatch(decrementAction())}>Decrement</Button>
-          <Button onClick={() => dispatch(incrementByAmountAction(22))}>
-            Increment by 22
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={() => dispatch(incrementAction())}>
+              Increment
+            </Button>
+            <Button onClick={() => dispatch(decrementAction())}>
+              Decrement
+            </Button>
+            <Button variant="outline" onClick={() => dispatch(incrementByAmountAction(22))}>
+              Increment by 22
+            </Button>
+          </div>
         </div>
 
         <div className="flex flex-col gap-6">
@@ -58,12 +64,6 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           <TypographyH3>TypographyH3</TypographyH3>
 
           <TypographyH4>TypographyH4</TypographyH4>
-
-          <TypographyP>
-            TypographyP - Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Natus, ut laudantium totam atque voluptas ex velit laboriosam
-            dolorum unde impedit libero debitis numquam doloribus laborum.
-          </TypographyP>
 
           <TypographyP>
             TypographyP - Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -85,7 +85,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
 
           <Modal>
             <ModalTrigger asChild>
-              <p>Show modal</p>
+              <Button variant="secondary">Show modal</Button>
             </ModalTrigger>
             <ModalContent>
               <ModalHeader>
@@ -100,7 +100,6 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </ModalFooter>
             </ModalContent>
           </Modal>
-
         </div>
       </div>
     </div>

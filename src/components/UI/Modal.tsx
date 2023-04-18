@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ModalPrimitive from "@radix-ui/react-alert-dialog";
 
+import { buttonVariants } from "./Button";
+
 import { cn } from "@/lib/utils";
 
 export const Modal = ModalPrimitive.Root;
@@ -104,12 +106,12 @@ export const ModalAction = React.forwardRef<
   React.ElementRef<typeof ModalPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof ModalPrimitive.Action>
 >(({ className, ...props }, ref) => {
-  return <ModalPrimitive.Action ref={ref} className={cn(className)} {...props} />;
+  return <ModalPrimitive.Action ref={ref} className={cn(buttonVariants(),className)} {...props} />;
 });
 
 export const ModalCancel = React.forwardRef<
   React.ElementRef<typeof ModalPrimitive.Cancel>,
   React.ComponentPropsWithoutRef<typeof ModalPrimitive.Cancel>
 >(({ className, ...props }, ref) => {
-  return <ModalPrimitive.Cancel ref={ref} className={cn("mt-2 sm:mt-0")} {...props} />;
+  return <ModalPrimitive.Cancel ref={ref} className={cn(buttonVariants({variant:"outline"}),"mt-2 sm:mt-0",className)} {...props} />;
 });
