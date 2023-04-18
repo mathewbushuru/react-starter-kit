@@ -10,8 +10,19 @@ import {
   TypographyH3,
   TypographyH4,
   TypographyP,
-  TypographyLead
-} from "@/components/UI";
+  TypographyLead,
+} from "@/components/ui";
+import {
+  Modal,
+  ModalAction,
+  ModalCancel,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTrigger,
+} from "@/components/ui";
 
 import {
   incrementAction,
@@ -27,9 +38,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   const value = useSelector((state: any) => state.counter.value);
 
   return (
-    <div className="min-h-screen bg-primary-foreground text-primary p-2">
+    <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
       <div className="max-w-5xl sm:mx-auto">
-        <div className="border mb-4 p-2">
+        <div className="mb-4 border p-2">
           Example home page
           <div>{value}</div>
           <Button onClick={() => dispatch(incrementAction())}>Increment</Button>
@@ -39,7 +50,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           </Button>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <TypographyH1>TypographyH1</TypographyH1>
 
           <TypographyH2>TypographyH2</TypographyH2>
@@ -67,7 +78,29 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
 
           <TypographyCode>TypographyCode - TailwindCSS</TypographyCode>
 
-          <TypographyLead>TypographyLead - Lorem ipsum dolor sit amet consectetur, adipisicing elit.</TypographyLead>
+          <TypographyLead>
+            TypographyLead - Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit.
+          </TypographyLead>
+
+          <Modal>
+            <ModalTrigger asChild>
+              <p>Show modal</p>
+            </ModalTrigger>
+            <ModalContent>
+              <ModalHeader>
+                <ModalTitle>Are you sure?</ModalTitle>
+                <ModalDescription>
+                  This action cannot be undone!
+                </ModalDescription>
+              </ModalHeader>
+              <ModalFooter>
+                <ModalCancel>Cancel</ModalCancel>
+                <ModalAction>Continue</ModalAction>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+
         </div>
       </div>
     </div>

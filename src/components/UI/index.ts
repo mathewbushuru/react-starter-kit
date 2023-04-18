@@ -1,2 +1,3 @@
-export * from "@/components/UI/Button";
-export * from "@/components/UI/Typography";
+export * from "@/components/ui/Button";
+export * from "@/components/ui/Modal";
+export * from "@/components/ui/Typography";

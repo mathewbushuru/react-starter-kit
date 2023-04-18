@@ -1,4 +1,4 @@
-import { ComingSoon } from "@/components/Utils"
+import { ComingSoon } from "@/components/utils"
 import { ExampleHomePage } from "@/features/example-feature"
 
 const publicRoutes =  [

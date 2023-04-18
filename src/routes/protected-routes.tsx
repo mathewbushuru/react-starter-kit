@@ -1,4 +1,4 @@
-import { ComingSoon } from "@/components/Utils";
+import { ComingSoon } from "@/components/utils";
 import { ErrorPage } from "@/globalPages";
 
 const protectedRoutes = [

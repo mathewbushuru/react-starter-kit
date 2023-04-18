@@ -1,2 +1,2 @@
-export * from "@/components/Utils/ComingSoon";
-export * from "@/components/Utils/ScrollTop";
+export * from "@/components/utils/ComingSoon";
+export * from "@/components/utils/ScrollTop";

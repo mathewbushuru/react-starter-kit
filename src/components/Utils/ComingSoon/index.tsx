@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { MainLayout } from "@/layouts";
-import { Button } from "@/components/UI";
+import { Button } from "@/components/ui";
 
 interface ComingSoonProps {
   item: string;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { ScrollTop } from "@/components/Utils";
+import { ScrollTop } from "@/components/utils";
 
 interface MainLayoutProps {
   children: React.ReactNode;
