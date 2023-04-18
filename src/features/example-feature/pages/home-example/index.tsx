@@ -40,7 +40,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   return (
     <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
       <div className="max-w-5xl sm:mx-auto">
-        <div className="mb-4 border p-2 space-y-2">
+        <div className="mb-4 space-y-2 border p-2">
           <div>Example home page - Redux demo</div>
           <div>{value}</div>
           <div className="flex gap-2">
@@ -50,13 +50,34 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             <Button onClick={() => dispatch(decrementAction())}>
               Decrement
             </Button>
-            <Button variant="outline" onClick={() => dispatch(incrementByAmountAction(22))}>
+            <Button
+              variant="outline"
+              onClick={() => dispatch(incrementByAmountAction(22))}
+            >
               Increment by 22
             </Button>
           </div>
         </div>
 
         <div className="flex flex-col gap-6">
+          <Modal>
+            <ModalTrigger asChild>
+              <Button variant="secondary">Show modal</Button>
+            </ModalTrigger>
+            <ModalContent>
+              <ModalHeader>
+                <ModalTitle>Are you sure?</ModalTitle>
+                <ModalDescription>
+                  This action cannot be undone!
+                </ModalDescription>
+              </ModalHeader>
+              <ModalFooter>
+                <ModalCancel>Cancel</ModalCancel>
+                <ModalAction>Continue</ModalAction>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+
           <TypographyH1>TypographyH1</TypographyH1>
 
           <TypographyH2>TypographyH2</TypographyH2>
@@ -82,24 +103,17 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             TypographyLead - Lorem ipsum dolor sit amet consectetur, adipisicing
             elit.
           </TypographyLead>
+        </div>
 
-          <Modal>
-            <ModalTrigger asChild>
-              <Button variant="secondary">Show modal</Button>
-            </ModalTrigger>
-            <ModalContent>
-              <ModalHeader>
-                <ModalTitle>Are you sure?</ModalTitle>
-                <ModalDescription>
-                  This action cannot be undone!
-                </ModalDescription>
-              </ModalHeader>
-              <ModalFooter>
-                <ModalCancel>Cancel</ModalCancel>
-                <ModalAction>Continue</ModalAction>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+        <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
+          <Button> Primary Button</Button>
+          <Button variant="outline">Outline Button</Button>
+          <Button variant="secondary">Secondary Button</Button>
+          <Button variant="destructive">Destructive Button</Button>
+          <Button variant="ghost">Ghost Button</Button>
+          <Button variant="link">Link Button</Button>
+          <Button size="sm">Small  button</Button>
+          <Button size="lg">Large  button</Button>
         </div>
       </div>
     </div>

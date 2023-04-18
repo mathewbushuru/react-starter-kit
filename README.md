@@ -1,3 +1,5 @@
+![Homepage](./docs/homepage.jpg)
+
 ## Table Of Contents:
 
 - 💻 Application Overview
@@ -36,20 +38,18 @@ git commit -m "Initial commit"
 
 To start the app, in the project directory run:
 
-`yarn start`
+`yarn start` or `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 `yarn build`
 
-Builds the app for production to the `build` folder.
-
-#### Using UI Libraries 
-
-To set up a UI library add the library's context provider to `./providers/index.jsx`
+Builds the app for production.
 
 #### Data model
+
+Add the data model for the application here e.g
 
 - User - can have one of these roles:
 
@@ -74,7 +74,7 @@ The application has been bootstrapped  using `Vite`
 
 #### Absolute imports
 
-I have configured absolute imports to make it easier to move files around and avoid messy import paths such as `../../../../Component`. After moving a file, all imports will remain intact. Here is how I have configured it in this project:
+I have configured absolute imports to make it easier to move files around and avoid messy import paths such as `../../../../Component`. After moving a file, all imports will remain intact. Here is how it is configured in this project:
 
 In the `vite.config.ts` file, added:
 ```sh
@@ -108,9 +108,9 @@ The app uses the `React-router v6.10.0`.
 
 The root router (`appRouter`) for the app is found at `src/routes`. It uses the `createBrowserRouter` function to combine app-wide routes defined at `src/routes/app-routes.js` with all the feature specific routes such as the example-feature routes defined at `src/features/example-feature/routes`. The `appRouter` is used to create the `AppProvider` component that then wraps the whole app.
 
-When defining the routes and their corresponding paths and elements, remember to also include an error element component that handles any errors that occur for that path.
+When defining the routes and their corresponding paths and elements, include an error element component that handles any errors that occur for that path.
 
-If nested routes are needed, pass them as an array to the children key. Remember to include the `Outlet` component in the parent route if you want it to to be embedded in the parent component
+If nested routes are needed, pass them as an array to the children key. For this to work, include the `Outlet` component in the parent route if you want it to to be embedded in the parent component
 
 Use `action` functions to define what happens when forms are submitted. As a result an example routes array would look like
 
@@ -263,22 +263,15 @@ Example features for a standard app include `/auth`, `/users`, etc.
 
 Keep components, functions, styles, close to components it is being used. In the `components` directory, each component should have its own folder with everything related to it
 
-2. Use modularized styles (`Component.module.css`) and add all global styles to `index.css`
+2. Abstract shared components to `src/components` to be part of the app's component library.
 
-This prevents clashing of class names in the app. To use the css in the component:
+3. This project is set up to use `TailwindCSS` for styling.
 
-`import styles from "Component.module.css"`
-`<div className={styles.main} />`
-
-3. Abstract shared components to `src/components` to be part of the app's component library.
-
-4. To use UI Libraries, replace the relevant provider in `./providers` to use the one you've chosen. I currently have providers for Chakra and Mantine.
-
-Wrap third party components to adapt them to the applications needs.
+ I am also using pimitives from `RadixUI` which provides completely unstyled headless components like alert dialogs that already have accessibility baked in. This makes it easier to implement my custom design system instead of trying to adapt already styled component libraries like MUI.
 
 ## 📡 API Layer
 
-I am creating API request declarations on a feature by feature basis. For the example feature, its API can be found at `src/features/example-feature/example-api.js`
+Creating API request declarations on a feature by feature basis. For the example feature, its API can be found at `src/features/example-feature/example-api.js`
 
 For this API to work, you need relevant environment variables. For example your `.env` file needs
 
@@ -291,7 +284,7 @@ These are used to set up the project at `src/config`.
 
 ## 🗃️ State Management
 
-Instead of maintaining a single centralized store, I'm using different types of state for different needs of the app to make it easy to maintain and scale
+Instead of maintaining a single centralized store, use different types of state for different needs of the app to make it easy to maintain and scale
 
 #### Component State
 
@@ -304,13 +297,13 @@ This is the state that only a component needs, and it is not meant to be shared 
 
 This is the state that controls interactive parts of an application. Opening modals, notifications, changing color mode, etc. For best performance and maintainability, keep the state as close as possible to the components that are using it. Don't make everything global out of the box.
 
-I prefer `Redux` with `Redux-toolkit`. The project already has redux toolkit set up to manage global state at `src/stores/redux/globalStore.js`.
+This project is already set up to use `Redux` with `Redux-toolkit`. Checkout the global state store at `src/stores/redux/globalStore.js`.
 
 Each individual feature then has individual slices. An example redux slice is shown in `src/features/example-feature/counterSlice.js`
 
 #### Server Cache State
 
-This is the state that comes from the server which is being cached on the client for further usage. It is possible to store remote data inside a state management store such as redux, but there are better solutions for that. I personally prefer `react-query` (REST+GraphQL)
+This is the state that comes from the server which is being cached on the client for further usage. One possible solution for this is `react-query` (REST+GraphQL)
 
 #### Form State
 
@@ -324,7 +317,7 @@ State that is being kept in the address bar of the browser. It is usually tracke
 
 ## 🧪 Testing
 
-I plan to set up `Vitest` some time in the future.
+Add testing docs here e.g `Vitest` 
 
 ## ⚠️ Error Handling
 
