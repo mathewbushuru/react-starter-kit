@@ -326,7 +326,7 @@ The app uses React Router V6 for global error handling: Any uncaught or unhandle
 
 ## 🌐 Deployment
 
-I have set up a github action to deploy the react site to Github pages at `.github/workflows/ghpages-deploy.yml`. To make it work, edit `./vite.config.ts` and add your repo name to the base field. 
+I have set up a github action to deploy the react site to Github pages at `.github/workflows/deploy.yml`. To make it work, edit `./vite.config.ts` and add your repo name to the base field. 
 
 ```sh
 export default defineConfig({
