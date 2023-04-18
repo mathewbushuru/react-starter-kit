@@ -8,8 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-# Uncomment dist for Github pages deployment
-# dist
+dist
 dist-ssr
 *.local
 
