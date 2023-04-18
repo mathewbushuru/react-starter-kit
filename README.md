@@ -268,11 +268,11 @@ Keep components, functions, styles, close to components it is being used. In the
 
 3. This project is set up to use `TailwindCSS` for styling.
 
- I am also using pimitives from `RadixUI` which provides completely unstyled headless components like alert dialogs that already have accessibility baked in. This makes it easier to implement my custom design system instead of trying to adapt already styled component libraries like MUI.
+ I am also using primitives from `RadixUI` which provides completely unstyled headless components like alert dialogs that already have accessibility baked in. This makes it easier to implement my custom design system instead of trying to adapt already styled component libraries like MUI.
 
 ## 📡 API Layer
 
-Creating API request declarations on a feature by feature basis. For the example feature, its API can be found at `src/features/example-feature/example-api.js`
+Create API request declarations on a feature by feature basis. For the example feature, its API can be found at `src/features/example-feature/example-api.js`
 
 For this API to work, you need relevant environment variables. For example your `.env` file needs
 
