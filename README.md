@@ -11,6 +11,7 @@
 - 🧪 Testing
 - ⚠️ Error Handling
 - 🌐 Deployment
+- 👁️ Credits
 
 ## 💻 Application Overview
 
@@ -332,3 +333,8 @@ Some options for hosting the production build of this app are:
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - [Google Firebase Hosting](https://firebase.google.com/docs/hosting)
 - etc.
+
+## 👁️ Credits
+
+- [bulletproof-react](https://github.com/alan2207/bulletproof-react)
+- [shadcn/ui](https://github.com/shadcn/ui)
