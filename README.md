@@ -326,12 +326,22 @@ The app uses React Router V6 for global error handling: Any uncaught or unhandle
 
 ## 🌐 Deployment
 
-Some options for hosting the production build of this app are:
+I have set up a github action to deploy the react site to Github pages at `.github/workflows/ghpages-deploy.yml`. To make it work, edit `./vite.config.ts` and add your repo name to the base field. 
+
+```sh
+export default defineConfig({
+  base: "/<REPO_NAME>/",   
+  ...
+})
+```
+
+Other options for hosting the production build of this app are:
 
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - [Google Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Render](https://render.com/)
 - etc.
 
 ## 👁️ Credits
