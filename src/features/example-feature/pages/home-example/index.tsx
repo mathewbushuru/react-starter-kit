@@ -13,6 +13,15 @@ import {
   TypographyLead,
 } from "@/components/ui";
 import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerFooter,
+} from "@/components/ui";
+import {
   Modal,
   ModalAction,
   ModalCancel,
@@ -37,10 +46,17 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
 
   const value = useSelector((state: any) => state.counter.value);
 
+  const drawerPositions: ["right", "left", "top", "bottom"] = [
+    "right",
+    "left",
+    "top",
+    "bottom",
+  ];
+
   return (
     <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
       <div className="max-w-5xl sm:mx-auto">
-        <div className="mb-4 space-y-2 border p-2">
+        <div className="mb-4 space-y-3 border p-2">
           <div>Example home page - Redux demo</div>
           <div>{value}</div>
           <div className="flex gap-2">
@@ -62,7 +78,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
         <div className="flex flex-col gap-6">
           <Modal>
             <ModalTrigger asChild>
-              <Button variant="secondary">Show modal</Button>
+              <Button variant="outline" className="max-w-xs">
+                Show modal
+              </Button>
             </ModalTrigger>
             <ModalContent>
               <ModalHeader>
@@ -77,6 +95,31 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </ModalFooter>
             </ModalContent>
           </Modal>
+
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button variant="secondary" className="max-w-xs">
+                Open default drawer(right)
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>Edit profile</DrawerTitle>
+                <DrawerDescription>
+                  Make changes to your profile here. Click save when you're
+                  done.
+                </DrawerDescription>
+              </DrawerHeader>
+              <div>
+                Name <br />
+                Username <br />
+                Input <br />
+              </div>
+              <DrawerFooter>
+                <Button>Save changes</Button>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
 
           <TypographyH1>TypographyH1</TypographyH1>
 
@@ -103,6 +146,33 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             TypographyLead - Lorem ipsum dolor sit amet consectetur, adipisicing
             elit.
           </TypographyLead>
+
+          {drawerPositions.map((position) => (
+            <Drawer key={position}>
+              <DrawerTrigger asChild>
+                <Button variant="outline" className="max-w-xs">
+                  Open {position} drawer
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent position={position}>
+                <DrawerHeader>
+                  <DrawerTitle>Edit profile</DrawerTitle>
+                  <DrawerDescription>
+                    Make changes to your profile here. Click save when you're
+                    done.
+                  </DrawerDescription>
+                </DrawerHeader>
+                <div>
+                  Name <br />
+                  Username <br />
+                  Input <br />
+                </div>
+                <DrawerFooter>
+                  <Button>Save changes</Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          ))}
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
@@ -112,8 +182,8 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           <Button variant="destructive">Destructive Button</Button>
           <Button variant="ghost">Ghost Button</Button>
           <Button variant="link">Link Button</Button>
-          <Button size="sm">Small  button</Button>
-          <Button size="lg">Large  button</Button>
+          <Button size="sm">Small button</Button>
+          <Button size="lg">Large button</Button>
         </div>
       </div>
     </div>
