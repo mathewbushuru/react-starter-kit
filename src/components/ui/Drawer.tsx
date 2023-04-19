@@ -189,7 +189,7 @@ const DrawerFooter = ({
   return (
     <div
       className={cn(
-        "sm:space-x-x flex flex-col-reverse sm:flex-row sm:justify-end",
+        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
         className
       )}
       {...props}
@@ -197,12 +197,32 @@ const DrawerFooter = ({
   );
 };
 
+export const DrawerAction = React.forwardRef<
+  React.ElementRef<typeof DrawerPrimitive.Action>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Action>
+>(({ className, ...props }, ref) => {
+  return (
+    <DrawerPrimitive.Action
+      ref={ref}
+      className={cn(
+        "flex flex-col-reverse items-stretch sm:flex-row sm:items-center sm:justify-end sm:space-x-2",
+        className
+      )}
+      {...props}
+    />
+  );
+});
+
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
 >(({ className, ...props }, ref) => {
   return (
-    <DrawerPrimitive.Title ref={ref} className={cn("text-lg font-semibold text-foreground", className)} {...props} />
+    <DrawerPrimitive.Title
+      ref={ref}
+      className={cn("text-lg font-semibold text-foreground", className)}
+      {...props}
+    />
   );
 });
 

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {
   Button,
+  Input,
   TypographyBlockquote,
   TypographyCode,
   TypographyH1,
@@ -20,6 +21,7 @@ import {
   DrawerTitle,
   DrawerDescription,
   DrawerFooter,
+  DrawerAction,
 } from "@/components/ui";
 import {
   Modal,
@@ -110,13 +112,28 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                   done.
                 </DrawerDescription>
               </DrawerHeader>
-              <div>
-                Name <br />
-                Username <br />
-                Input <br />
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-2">
+                  Name
+                  <Input
+                    id="name"
+                    placeholder="John Doe"
+                    className="col-span-4 sm:col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-2">
+                  Username
+                  <Input
+                    id="username"
+                    placeholder="@johndoe"
+                    className="col-span-4 sm:col-span-3"
+                  />
+                </div>
               </div>
               <DrawerFooter>
-                <Button>Save changes</Button>
+                <DrawerAction>
+                  <Button className="mt-2">Save changes</Button>
+                </DrawerAction>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
@@ -168,7 +185,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                   Input <br />
                 </div>
                 <DrawerFooter>
-                  <Button>Save changes</Button>
+                  <DrawerAction>
+                    <Button>Save changes</Button>
+                  </DrawerAction>
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>
