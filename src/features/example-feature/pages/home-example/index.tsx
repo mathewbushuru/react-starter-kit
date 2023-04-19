@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   Button,
   Input,
+  Label,
   TypographyBlockquote,
   TypographyCode,
   TypographyH1,
@@ -114,7 +115,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </DrawerHeader>
               <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-4 items-center gap-2">
-                  Name
+                  <Label htmlFor="name" className="sm:text-right">
+                    Name
+                  </Label>
                   <Input
                     id="name"
                     placeholder="John Doe"
@@ -122,7 +125,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                   />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-2">
-                  Username
+                  <Label htmlFor="username" className="sm:text-right">
+                    Username
+                  </Label>
                   <Input
                     id="username"
                     placeholder="@johndoe"
@@ -179,10 +184,27 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                     done.
                   </DrawerDescription>
                 </DrawerHeader>
-                <div>
-                  Name <br />
-                  Username <br />
-                  Input <br />
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-2">
+                    <Label htmlFor="name" className="sm:text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      placeholder="John Doe"
+                      className="col-span-4 sm:col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-2">
+                    <Label htmlFor="username" className="sm:text-right">
+                      Username
+                    </Label>
+                    <Input
+                      id="username"
+                      placeholder="@johndoe"
+                      className="col-span-4 sm:col-span-3"
+                    />
+                  </div>
                 </div>
                 <DrawerFooter>
                   <DrawerAction>
