@@ -81,7 +81,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
         <div className="flex flex-col gap-6">
           <Modal>
             <ModalTrigger asChild>
-              <Button variant="outline" className="max-w-xs">
+              <Button variant="outline" className="mx-auto max-w-xs sm:mx-0">
                 Show modal
               </Button>
             </ModalTrigger>
@@ -101,7 +101,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
 
           <Drawer>
             <DrawerTrigger asChild>
-              <Button variant="secondary" className="max-w-xs">
+              <Button variant="secondary" className="mx-auto  max-w-xs sm:mx-0">
                 Open default drawer(right)
               </Button>
             </DrawerTrigger>
