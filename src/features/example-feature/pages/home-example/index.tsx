@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -13,6 +13,7 @@ import {
   TypographyH4,
   TypographyP,
   TypographyLead,
+  DropdownMenuSubTrigger,
 } from "@/components/ui";
 import {
   Drawer,
@@ -35,6 +36,21 @@ import {
   ModalTitle,
   ModalTrigger,
 } from "@/components/ui";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuTrigger,
+} from "@/components/ui";
 
 import {
   incrementAction,
@@ -56,11 +72,13 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
     "bottom",
   ];
 
+  const [menuBtnSelection, setMenuBtnSelection] = useState("Bottom");
+
   return (
     <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
       <div className="max-w-5xl sm:mx-auto">
         <div className="mb-4 space-y-3 border p-2">
-          <div>Example home page - Redux demo</div>
+          <div>Example home page - Redux Toolkit demo</div>
           <div>{value}</div>
           <div className="flex gap-2">
             <Button onClick={() => dispatch(incrementAction())}>
@@ -136,12 +154,83 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                 </div>
               </div>
               <DrawerFooter>
-                <DrawerAction>
-                  <Button className="mt-2">Save changes</Button>
-                </DrawerAction>
+                {/* <DrawerAction>Done?</DrawerAction> */}
+                <Button className="mt-2">Save changes</Button>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button className="mx-auto max-w-xs">Menu Button</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <span>Profile</span>
+                  <DropdownMenuShortcut>Comm+P</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <span>Billing</span>
+                  <DropdownMenuShortcut>Comm+B</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <span>Settings</span>
+                  <DropdownMenuShortcut>Comm+S</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <span>Keyboard Shortcuts</span>
+                  <DropdownMenuShortcut>Comm+K</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <span>Team</span>
+                </DropdownMenuItem>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Invite users</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuPortal>
+                    <DropdownMenuSubContent>
+                      <DropdownMenuItem>
+                        <span>Email</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <span>Message</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>
+                        <span>More...</span>
+                      </DropdownMenuItem>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuPortal>
+                </DropdownMenuSub>
+                <DropdownMenuItem>
+                  <span>New Team</span>
+                  <DropdownMenuShortcut>Comm+T</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <span>GitHub</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <span>Support</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem disabled>
+                <span>API</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <span>Logout</span>
+                <DropdownMenuShortcut>Comm+Q</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <TypographyH1>TypographyH1</TypographyH1>
 
@@ -207,13 +296,36 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                   </div>
                 </div>
                 <DrawerFooter>
-                  <DrawerAction>
-                    <Button>Save changes</Button>
-                  </DrawerAction>
+                  <Button>Save changes</Button>
+                  {/* <DrawerAction></DrawerAction> */}
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>
           ))}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="secondary" className="mx-auto max-w-xs">
+                Menu Button 2
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuRadioGroup
+                value={menuBtnSelection}
+                onValueChange={setMenuBtnSelection}
+              >
+                <DropdownMenuRadioItem value="Top">Top</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="Middle">
+                  Middle
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="Bottom">
+                  Bottom
+                </DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">

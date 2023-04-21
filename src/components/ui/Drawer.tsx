@@ -81,7 +81,7 @@ const DrawerVariants = cva(
       {
         position: ["top", "bottom"],
         size: "default",
-        class: "h-1/3",
+        class: "h-1/2 sm:h-1/3",
       },
       {
         position: ["top", "bottom"],
