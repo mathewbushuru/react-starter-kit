@@ -13,7 +13,6 @@ import {
   TypographyH4,
   TypographyP,
   TypographyLead,
-  DropdownMenuSubTrigger,
 } from "@/components/ui";
 import {
   Drawer,
@@ -50,6 +49,13 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuTrigger,
+  DropdownMenuSubTrigger,
+} from "@/components/ui";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui";
 
 import {
@@ -326,17 +332,35 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
-          <Button> Primary Button</Button>
-          <Button variant="outline">Outline Button</Button>
-          <Button variant="secondary">Secondary Button</Button>
-          <Button variant="destructive">Destructive Button</Button>
-          <Button variant="ghost">Ghost Button</Button>
-          <Button variant="link">Link Button</Button>
-          <Button size="sm">Small button</Button>
-          <Button size="lg">Large button</Button>
+          <TypographyH4 className="border-b text-center text-muted-foreground">
+            Accordion
+          </TypographyH4>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>Yes, it adheres to the  WAI-ARIA design pattern</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionContent>Yes, matches other components</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>Yes, it is animated by default</AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
+            <Button> Primary Button</Button>
+            <Button variant="outline">Outline Button</Button>
+            <Button variant="secondary">Secondary Button</Button>
+            <Button variant="destructive">Destructive Button</Button>
+            <Button variant="ghost">Ghost Button</Button>
+            <Button variant="link">Link Button</Button>
+            <Button size="sm">Small button</Button>
+            <Button size="lg">Large button</Button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+export * from "@/components/ui/Accordion";
 export * from "@/components/ui/Button";
 export * from "@/components/ui/Drawer";
 export * from "@/components/ui/DropdownMenu";
