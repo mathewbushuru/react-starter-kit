@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { AlertCircle } from "lucide-react";
 
 import {
   Button,
@@ -57,6 +58,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui";
 
 import {
   incrementAction,
@@ -333,13 +335,13 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <TypographyH4 className="border-b text-center text-muted-foreground">
-            Accordion
-          </TypographyH4>
+          <SectionHeader>Accordion</SectionHeader>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>Yes, it adheres to the  WAI-ARIA design pattern</AccordionContent>
+              <AccordionContent>
+                Yes, it adheres to the WAI-ARIA design pattern
+              </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>Is it styled?</AccordionTrigger>
@@ -347,9 +349,20 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>Yes, it is animated by default</AccordionContent>
+              <AccordionContent>
+                Yes, it is animated by default
+              </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <SectionHeader>Alert</SectionHeader>
+          <Alert variant="destructive">
+            <AlertCircle className="w-4 h-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+              Your session has expired.Please log in again
+            </AlertDescription>
+          </Alert>
 
           <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
             <Button> Primary Button</Button>
@@ -366,3 +379,11 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
     </div>
   );
 };
+
+function SectionHeader({ children }: { children: React.ReactNode }) {
+  return (
+    <TypographyH4 className="border-b text-center text-muted-foreground">
+      {children}
+    </TypographyH4>
+  );
+}
