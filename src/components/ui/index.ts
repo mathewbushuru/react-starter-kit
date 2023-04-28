@@ -9,4 +9,5 @@ export * from "@/components/ui/Input";
 export * from "@/components/ui/Label";
 export * from "@/components/ui/Modal";
 export * from "@/components/ui/Popover";
+export * from "@/components/ui/Switch";
 export * from "@/components/ui/Typography";

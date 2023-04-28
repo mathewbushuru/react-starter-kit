@@ -12,6 +12,7 @@ import {
   Calendar,
   Input,
   Label,
+  Switch,
   TypographyBlockquote,
   TypographyCode,
   TypographyH1,
@@ -466,6 +467,12 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </div>
             </PopoverContent>
           </Popover>
+
+          <SectionHeader>Switch</SectionHeader>
+          <div className="mx-auto flex items-center space-x-2">
+            <Switch id="airplane-mode" />
+            <Label htmlFor="airplane-mode" className="cursor-pointer">Airplane Mode</Label>
+          </div>
         </div>
       </div>
     </div>
