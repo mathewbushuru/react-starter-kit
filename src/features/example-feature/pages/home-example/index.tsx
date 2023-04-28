@@ -1,7 +1,11 @@
 import { FC, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { format } from "date-fns";
-import { AlertCircle, Calendar as CalendarIcon } from "lucide-react";
+import {
+  AlertCircle,
+  Calendar as CalendarIcon,
+  Settings2Icon,
+} from "lucide-react";
 
 import {
   Button,
@@ -25,7 +29,6 @@ import {
   DrawerTitle,
   DrawerDescription,
   DrawerFooter,
-  DrawerAction,
 } from "@/components/ui";
 import {
   Modal,
@@ -112,26 +115,6 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
         </div>
 
         <div className="flex flex-col gap-6">
-          <Modal>
-            <ModalTrigger asChild>
-              <Button variant="outline" className="mx-auto max-w-xs sm:mx-0">
-                Show modal
-              </Button>
-            </ModalTrigger>
-            <ModalContent>
-              <ModalHeader>
-                <ModalTitle>Are you sure?</ModalTitle>
-                <ModalDescription>
-                  This action cannot be undone!
-                </ModalDescription>
-              </ModalHeader>
-              <ModalFooter>
-                <ModalCancel>Cancel</ModalCancel>
-                <ModalAction>Continue</ModalAction>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
-
           <Drawer>
             <DrawerTrigger asChild>
               <Button variant="secondary" className="mx-auto  max-w-xs sm:mx-0">
@@ -351,7 +334,7 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           {drawerPositions.map((position) => (
             <Drawer key={position}>
               <DrawerTrigger asChild>
-                <Button variant="outline" className="max-w-xs mx-auto">
+                <Button variant="outline" className="mx-auto max-w-xs">
                   Open {position} drawer
                 </Button>
               </DrawerTrigger>
@@ -417,6 +400,72 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <SectionHeader>Input / Label</SectionHeader>
+          <div className="mx-4 grid grid-cols-4 items-center gap-2">
+            <Label htmlFor="name" className="sm:text-right">
+              Name
+            </Label>
+            <Input
+              id="name"
+              placeholder="John Doe"
+              className="col-span-4 sm:col-span-3"
+            />
+          </div>
+
+          <SectionHeader>Modal</SectionHeader>
+          <Modal>
+            <ModalTrigger asChild>
+              <Button variant="outline" className="mx-auto max-w-xs ">
+                Show modal
+              </Button>
+            </ModalTrigger>
+            <ModalContent>
+              <ModalHeader>
+                <ModalTitle>Are you sure?</ModalTitle>
+                <ModalDescription>
+                  This action cannot be undone!
+                </ModalDescription>
+              </ModalHeader>
+              <ModalFooter>
+                <ModalCancel>Cancel</ModalCancel>
+                <ModalAction>Continue</ModalAction>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+
+          <SectionHeader>Popover</SectionHeader>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                className="mx-auto w-10 rounded-full p-0"
+              >
+                <Settings2Icon className="h-4 w-4" />
+                <span className="sr-only">Open popover</span>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="grid gap-4">
+                <div className="space-y-2">
+                  <h4 className="font-medium leading-none">Dimensions</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Set dimensions for the layer
+                  </p>
+                </div>
+                <div className="grid gap-2">
+                  <div className="grid-cols-3 grid gap-4 items-center">
+                    <Label htmlFor="width">Width</Label>
+                    <Input id="width" defaultValue="100%" className="col-span-2 h-8" />
+                  </div>
+                  <div className="grid-cols-3 grid gap-4 items-center">
+                    <Label htmlFor="height">Max. Height</Label>
+                    <Input id="height" defaultValue="none" className="col-span-2 h-8" />
+                  </div>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
     </div>
