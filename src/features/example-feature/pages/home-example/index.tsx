@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { format } from "date-fns";
 import {
   AlertCircle,
+  BellRingIcon,
   Calendar as CalendarIcon,
+  CheckIcon,
   Settings2Icon,
 } from "lucide-react";
 
@@ -12,6 +14,7 @@ import {
   Calendar,
   Input,
   Label,
+  Separator,
   Switch,
   TypographyBlockquote,
   TypographyCode,
@@ -21,6 +24,7 @@ import {
   TypographyH4,
   TypographyP,
   TypographyLead,
+  CardTitle,
 } from "@/components/ui";
 import {
   Drawer,
@@ -64,6 +68,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui";
@@ -92,6 +103,21 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   const [menuBtnSelection, setMenuBtnSelection] = useState("Bottom");
 
   const [date, setDate] = useState<Date>();
+
+  const cardNotifications = [
+    {
+      title: "Your call has been confirmed.",
+      description: "1 hour ago",
+    },
+    {
+      title: "Your have a new message!",
+      description: "1 hour ago",
+    },
+    {
+      title: "Your subscription is expiring soon!",
+      description: "2 hours ago",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-primary-foreground p-2 pb-10 text-primary">
@@ -331,6 +357,42 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             </PopoverContent>
           </Popover>
 
+          <SectionHeader>Card</SectionHeader>
+          <Card className="mx-auto w-[380px]">
+            <CardHeader>
+              <CardTitle>Notifications</CardTitle>
+              <CardDescription>You have 3 unread messages</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div className="flex items-center space-x-4 border rounded-md p-4">
+                <BellRingIcon />
+                <div className="flex-1 space-y-1">
+                  <p className="text-sm font-medium leading-none">Push Notifications</p>
+                  <p className="text-sm text-muted-foreground">Send notifications to device</p>
+                </div>
+                <Switch />
+              </div>
+              <div>
+                {cardNotifications.map((notification, index) => {
+                  return (
+                    <div key={index} className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+                      <span className="bg-sky-500 h-2 w-2 translate-y-1 rounded-full" />
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium leading-none">{notification.title}</p>
+                        <p className="text-sm text-muted-foreground">{notification.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button className="">
+                <CheckIcon className="" /> Mark all as read
+              </Button>
+            </CardFooter>
+          </Card>
+
           <SectionHeader>Drawer</SectionHeader>
           {drawerPositions.map((position) => (
             <Drawer key={position}>
@@ -455,23 +517,53 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
                   </p>
                 </div>
                 <div className="grid gap-2">
-                  <div className="grid-cols-3 grid gap-4 items-center">
+                  <div className="grid grid-cols-3 items-center gap-4">
                     <Label htmlFor="width">Width</Label>
-                    <Input id="width" defaultValue="100%" className="col-span-2 h-8" />
+                    <Input
+                      id="width"
+                      defaultValue="100%"
+                      className="col-span-2 h-8"
+                    />
                   </div>
-                  <div className="grid-cols-3 grid gap-4 items-center">
+                  <div className="grid grid-cols-3 items-center gap-4">
                     <Label htmlFor="height">Max. Height</Label>
-                    <Input id="height" defaultValue="none" className="col-span-2 h-8" />
+                    <Input
+                      id="height"
+                      defaultValue="none"
+                      className="col-span-2 h-8"
+                    />
                   </div>
                 </div>
               </div>
             </PopoverContent>
           </Popover>
 
+          <SectionHeader>Separator</SectionHeader>
+          <div className="mx-auto">
+            <div className="space-y-1 ">
+              <h4 className="text-sm font-medium leading-none">
+                Radix Primitives
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                An open-source UI component library
+              </p>
+            </div>
+            <Separator className="my-4" />
+            <div className="flex h-5 items-center space-x-4 text-sm">
+              <div>Blog</div>
+              <Separator orientation="vertical" />
+              <div>Docs</div>
+              <Separator orientation="vertical" />
+              <div>Source</div>
+            </div>
+          </div>
+
           <SectionHeader>Switch</SectionHeader>
           <div className="mx-auto flex items-center space-x-2">
             <Switch id="airplane-mode" />
-            <Label htmlFor="airplane-mode" className="cursor-pointer">Airplane Mode</Label>
+            <Label htmlFor="airplane-mode" className="cursor-pointer">
+              Airplane Mode
+            </Label>
           </div>
         </div>
       </div>
