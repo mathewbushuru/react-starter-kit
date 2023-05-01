@@ -17,6 +17,7 @@ import {
   Label,
   Separator,
   Switch,
+  ToastAction,
   TypographyBlockquote,
   TypographyCode,
   TypographyH1,
@@ -85,6 +86,7 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui";
+import { useToast } from "@/hooks/ui-hooks";
 
 import {
   incrementAction,
@@ -110,6 +112,8 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
   const [menuBtnSelection, setMenuBtnSelection] = useState("Bottom");
 
   const [date, setDate] = useState<Date>();
+
+  const { toast } = useToast();
 
   const cardNotifications = [
     {
@@ -584,11 +588,57 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             </Label>
           </div>
 
+          <SectionHeader>Toast</SectionHeader>
+          <Button
+            variant="outline"
+            className="mx-auto"
+            onClick={() =>
+              toast({
+                title: "Scheduled:Catch up",
+                description: "Monday, May 1, 2023 at 3:23 AM",
+                action: (
+                  <ToastAction altText="Go to schedule to undo">
+                    Undo
+                  </ToastAction>
+                ),
+              })
+            }
+          >
+            Add to calendar
+          </Button>
+          <Button
+            onClick={() => {
+              toast({ description: "Your message has been sent." });
+            }}
+            className="mx-auto"
+          >
+            Send message
+          </Button>
+          <Button
+            variant="secondary"
+            className="mx-auto"
+            onClick={() => {
+              toast({
+                variant: "destructive",
+                title: "Something went wrong.",
+                description: "There was something wrong with your request.",
+                action: (
+                  <ToastAction altText="Try again">Try again</ToastAction>
+                ),
+              });
+            }}
+          >
+            Fail
+          </Button>
+
           <SectionHeader>Tooltip</SectionHeader>
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" className="w-10 rounded-full p-0 mx-auto">
+                <Button
+                  variant="outline"
+                  className="mx-auto w-10 rounded-full p-0"
+                >
                   <PlusIcon className="h-4 w-4" />
                   <span className="sr-only">Add</span>
                 </Button>
