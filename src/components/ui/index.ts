@@ -12,4 +12,5 @@ export * from "@/components/ui/Modal";
 export * from "@/components/ui/Popover";
 export * from "@/components/ui/Separator";
 export * from "@/components/ui/Switch";
+export * from "@/components/ui/Tooltip";
 export * from "@/components/ui/Typography";

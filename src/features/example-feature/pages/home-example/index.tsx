@@ -6,6 +6,7 @@ import {
   BellRingIcon,
   Calendar as CalendarIcon,
   CheckIcon,
+  PlusIcon,
   Settings2Icon,
 } from "lucide-react";
 
@@ -74,6 +75,12 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+} from "@/components/ui";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@/components/ui";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
@@ -364,22 +371,33 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               <CardDescription>You have 3 unread messages</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
-              <div className="flex items-center space-x-4 border rounded-md p-4">
+              <div className="flex items-center space-x-4 rounded-md border p-4">
                 <BellRingIcon />
                 <div className="flex-1 space-y-1">
-                  <p className="text-sm font-medium leading-none">Push Notifications</p>
-                  <p className="text-sm text-muted-foreground">Send notifications to device</p>
+                  <p className="text-sm font-medium leading-none">
+                    Push Notifications
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Send notifications to device
+                  </p>
                 </div>
                 <Switch />
               </div>
               <div>
                 {cardNotifications.map((notification, index) => {
                   return (
-                    <div key={index} className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-                      <span className="bg-sky-500 h-2 w-2 translate-y-1 rounded-full" />
+                    <div
+                      key={index}
+                      className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                    >
+                      <span className="h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
                       <div className="space-y-1">
-                        <p className="text-sm font-medium leading-none">{notification.title}</p>
-                        <p className="text-sm text-muted-foreground">{notification.description}</p>
+                        <p className="text-sm font-medium leading-none">
+                          {notification.title}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {notification.description}
+                        </p>
                       </div>
                     </div>
                   );
@@ -565,6 +583,21 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               Airplane Mode
             </Label>
           </div>
+
+          <SectionHeader>Tooltip</SectionHeader>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" className="w-10 rounded-full p-0 mx-auto">
+                  <PlusIcon className="h-4 w-4" />
+                  <span className="sr-only">Add</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Add to library</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
     </div>
