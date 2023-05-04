@@ -11,8 +11,11 @@ import {
 } from "lucide-react";
 
 import {
+  AspectRatio,
+  Badge,
   Button,
   Calendar,
+  Checkbox,
   Input,
   Label,
   Separator,
@@ -26,9 +29,6 @@ import {
   TypographyH4,
   TypographyP,
   TypographyLead,
-  CardTitle,
-  AspectRatio,
-  Badge,
 } from "@/components/ui";
 import {
   Drawer,
@@ -78,6 +78,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+  CardTitle,
 } from "@/components/ui";
 import {
   Tooltip,
@@ -326,7 +327,10 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           </Alert>
 
           <SectionHeader>AspectRatio</SectionHeader>
-          <AspectRatio ratio={16 / 9} className="bg-muted overflow-hidden rounded-md ">
+          <AspectRatio
+            ratio={16 / 9}
+            className="overflow-hidden rounded-md bg-muted "
+          >
             <img
               src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
               alt="Photo by Drew Beamer"
@@ -343,7 +347,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
           </Avatar>
 
           <SectionHeader>Badge</SectionHeader>
-          <Badge variant="destructive" className="mx-auto">Destructive</Badge>
+          <Badge variant="destructive" className="mx-auto">
+            Destructive
+          </Badge>
 
           <SectionHeader>Button</SectionHeader>
           <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
@@ -427,6 +433,22 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               </Button>
             </CardFooter>
           </Card>
+
+          <SectionHeader>Checkbox</SectionHeader>
+          <div className="flex space-x-2 mx-auto">
+            <Checkbox id="terms1" />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor="terms1"
+                className="text-sm font-medium leading-none cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Accept terms and conditions
+              </label>
+              <p className="text-sm text-muted-foreground">
+                You agree to our Terms of Service and Privacy Policy.
+              </p>
+            </div>
+          </div>
 
           <SectionHeader>Drawer</SectionHeader>
           {drawerPositions.map((position) => (
