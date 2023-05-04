@@ -27,6 +27,7 @@ import {
   TypographyP,
   TypographyLead,
   CardTitle,
+  AspectRatio,
 } from "@/components/ui";
 import {
   Drawer,
@@ -322,6 +323,14 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
               Your session has expired.Please log in again
             </AlertDescription>
           </Alert>
+
+          <SectionHeader>AspectRatio</SectionHeader>
+          <AspectRatio ratio={16 / 9} className="bg-muted overflow-hidden rounded-md ">
+            <img
+              src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+              alt="Photo by Drew Beamer"
+            />
+          </AspectRatio>
 
           <SectionHeader>Avatar</SectionHeader>
           <Avatar>
