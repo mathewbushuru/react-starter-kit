@@ -28,6 +28,7 @@ import {
   TypographyLead,
   CardTitle,
   AspectRatio,
+  Badge,
 } from "@/components/ui";
 import {
   Drawer,
@@ -340,6 +341,9 @@ export const ExampleHomePage: FC<HomePageProps> = ({}) => {
             />
             <AvatarFallback>MB</AvatarFallback>
           </Avatar>
+
+          <SectionHeader>Badge</SectionHeader>
+          <Badge variant="destructive" className="mx-auto">Destructive</Badge>
 
           <SectionHeader>Button</SectionHeader>
           <div className="mt-6 grid grid-cols-2 gap-3  sm:grid-cols-3">
